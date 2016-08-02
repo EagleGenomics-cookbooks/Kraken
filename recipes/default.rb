@@ -5,6 +5,8 @@
 # Copyright (c) 2016 Eagle Genomics Ltd, Apache License, Version 2.0
 ######################################
 
+include_recipe 'apt'
+
 include_recipe 'build-essential'
 
 git_client 'default' do
