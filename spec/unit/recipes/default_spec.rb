@@ -28,12 +28,11 @@ describe 'Kraken::default' do
 
   # make sure that Kraken isntall is performed
   it 'install Kraken' do
-    expect(chef_run).to run_execute('./install_kraken.sh ' +   chef_run.node['Kraken']['install_dir'])
+    expect(chef_run).to run_execute('./install_kraken.sh ' + chef_run.node['Kraken']['install_dir'])
   end
-  
+
   # make sure that the Kraken directory is added to the path
   it 'adds kraken to path' do
     expect(chef_run).to add_magic_shell_environment('PATH')
   end
 end
-

@@ -7,4 +7,3 @@ default['Kraken']['version'] = 'master'
 default['Kraken']['base_dir'] = '/usr/local/'
 default['Kraken']['src_dir'] = node['Kraken']['base_dir'] + 'kraken-master/'
 default['Kraken']['install_dir'] = node['Kraken']['base_dir'] + 'Kraken'
-
