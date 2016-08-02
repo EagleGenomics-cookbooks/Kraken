@@ -9,25 +9,25 @@ end
 # Check that Kraken executable is in the path
 describe command('which kraken') do
   its('exit_status') { should eq 0 }
-  its('stdout') { should contain('/usr/local/kraken') }
+  its('stdout') { should match('kraken') }
 end
 
 # Check that Kraken build executable is in the path
 describe command('which kraken-build') do
   its('exit_status') { should eq 0 }
-  its('stdout') { should eq 0 }
+  its('stdout') { should match('kraken-build') }
 end 
 
 # Check that kraken works
 describe command('kraken --version') do
   its('exit_status') { should eq 0 }
-  its('stdout') { should contain('released') }
+  its('stdout') { should match('released') }
 end
 
 # Check that kraken-build works
 describe command('kraken-build --version') do
   its('exit_status') { should eq 0 }
-  its('stdout') { should contain('released') }
+  its('stdout') { should match('released') }
 end
 
 

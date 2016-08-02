@@ -15,6 +15,7 @@ provisioner:
 
 verifier:
   name: inspec
+  format: doc
   sudo_command: '. /etc/profile;'
 
 platforms:
