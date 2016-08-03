@@ -8,7 +8,7 @@
 require 'spec_helper'
 
 describe 'Kraken::default' do
-  let(:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }
+  let(:chef_run) { ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '14.04').converge(described_recipe) }
 
   # default: make sure the converge works
   it 'converges successfully' do
