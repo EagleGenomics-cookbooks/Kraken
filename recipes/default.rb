@@ -8,6 +8,8 @@
 include_recipe 'apt'
 
 include_recipe 'build-essential'
+# jellyfish is necessary for kraken-build
+include_recipe 'Jellyfish'
 
 git_client 'default' do
   action :install
