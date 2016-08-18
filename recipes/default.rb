@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: Kraken
+# Cookbook Name:: kraken
 # Recipe:: default
 #
 # Copyright (c) 2016 Eagle Genomics Ltd, Apache License, Version 2.0
@@ -17,17 +17,17 @@ end
 
 ######################################
 
-git node['Kraken']['src_dir'] do
-  repository node['Kraken']['src_repo']
-  revision node['Kraken']['version']
+git node['kraken']['src_dir'] do
+  repository node['kraken']['src_repo']
+  revision node['kraken']['version']
   action 'checkout'
 end
 
-execute "./install_kraken.sh #{node['Kraken']['install_dir']}" do
-  cwd node['Kraken']['src_dir']
-  not_if { ::File.exist?("#{node['Kraken']['install_dir']}/kraken") }
+execute "./install_kraken.sh #{node['kraken']['install_dir']}" do
+  cwd node['kraken']['src_dir']
+  not_if { ::File.exist?("#{node['kraken']['install_dir']}/kraken") }
 end
 
 magic_shell_environment 'PATH' do
-  value "$PATH:#{node['Kraken']['install_dir']}"
+  value "$PATH:#{node['kraken']['install_dir']}"
 end

@@ -25,5 +25,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[Kraken::default]
+      - recipe[kraken::default]
     attributes:
