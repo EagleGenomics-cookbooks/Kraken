@@ -28,6 +28,18 @@ execute "./install_kraken.sh #{node['kraken']['install_dir']}" do
   not_if { ::File.exist?("#{node['kraken']['install_dir']}/kraken") }
 end
 
-magic_shell_environment 'PATH' do
-  value "$PATH:#{node['kraken']['install_dir']}"
+# Add Kraken to $PATH
+# magic_shell will just overwrite PATH set elsewhere
+# So use a ruby block...
+# magic_shell_environment 'KRAKEN_PATH' do
+#   environment_variable 'PATH'
+#   value "$PATH:#{node['kraken']['install_dir']}"
+# end
+
+ruby_block 'add_kraken_to_PATH' do
+  block do
+    file = Chef::Util::FileEdit.new('/etc/profile.d/PATH.sh')
+    file.insert_line_if_no_match('kraken', "export PATH=\"$PATH:#{node['kraken']['install_dir']}\"")
+    file.write_file
+  end
 end
