@@ -5,7 +5,7 @@
 # Copyright (c) 2016 Eagle Genomics Ltd, Apache License, Version 2.0
 ######################################
 
-include_recipe 'apt'
+include_recipe 'apt' if node['platform_family'] == 'debian'
 
 include_recipe 'build-essential'
 # jellyfish is necessary for kraken-build
