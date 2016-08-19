@@ -33,6 +33,6 @@ describe 'kraken::default' do
 
   # make sure that the kraken directory is added to the path
   it 'adds kraken to path' do
-    expect(chef_run).to add_magic_shell_environment('PATH')
+    expect(chef_run).to run_ruby_block('add_kraken_to_PATH')
   end
 end

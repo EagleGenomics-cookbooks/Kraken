@@ -4,7 +4,7 @@ maintainer_email 'chef@eaglegenomics.com'
 license 'apache2'
 description 'Installs/Configures kraken'
 long_description 'Installs/Configures kraken'
-version '0.1.4'
+version '0.1.5'
 
 source_url 'https://github.com/EagleGenomics-cookbooks/kraken'
 issues_url 'https://github.com/EagleGenomics-cookbooks/kraken/issues'
