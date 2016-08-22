@@ -6,4 +6,6 @@ end
 
 company_cookbook 'Jellyfish'
 
+cookbook 'magic_shell', git: 'git@github.com:cvrabie/magic_shell.git'
+
 metadata
