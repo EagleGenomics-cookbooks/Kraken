@@ -14,3 +14,11 @@ bin/*
 
 .kitchen/
 .kitchen.local.yml
+
+# OS generated files #
+######################
+.DS_Store
+Icon?
+nohup.out
+ehthumbs.db
+Thumbs.db
