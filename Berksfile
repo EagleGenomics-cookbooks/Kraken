@@ -6,6 +6,7 @@ end
 
 company_cookbook 'Jellyfish'
 
+# Use pull request for magic_shell to get filename functionality
 cookbook 'magic_shell', git: 'git@github.com:cvrabie/magic_shell.git'
 
 metadata
