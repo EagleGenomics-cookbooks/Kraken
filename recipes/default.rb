@@ -34,3 +34,7 @@ magic_shell_environment 'PATH' do
   filename 'kraken'
   value "$PATH:#{node['kraken']['install_dir']}"
 end
+
+magic_shell_environment 'KRAKEN_VERSION' do
+  value node['kraken']['version']
+end

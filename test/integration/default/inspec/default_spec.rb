@@ -2,7 +2,7 @@
 # check that git checkout was successful
 # is there any way to get the default attributes into this?
 # using chef_run.node[][] or just node[][] does not work
-describe file('/usr/local/kraken-master/install_kraken.sh') do
+describe file('/usr/local/kraken-checkout/install_kraken.sh') do
   it { should be_file }
 end
 
@@ -21,11 +21,13 @@ end
 # Check that kraken works
 describe command('kraken --version') do
   its('exit_status') { should eq 0 }
-  its('stdout') { should match('released') }
+  # its('stdout') { should match('0.10.5-beta') }
+  its('stdout') { should match('unreleased') }
 end
 
 # Check that kraken-build works
 describe command('kraken-build --version') do
   its('exit_status') { should eq 0 }
-  its('stdout') { should match('released') }
+  # its('stdout') { should match('0.10.5-beta') }
+  its('stdout') { should match('unreleased') }
 end

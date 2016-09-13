@@ -39,4 +39,9 @@ describe 'kraken::default' do
   it 'adds kraken path to PATH' do
     expect(chef_run).to add_magic_shell_environment('PATH')
   end
+
+  # make sure that the kraken version env variable is set
+  it 'adds kraken version env variable' do
+    expect(chef_run).to add_magic_shell_environment('KRAKEN_VERSION')
+  end
 end
