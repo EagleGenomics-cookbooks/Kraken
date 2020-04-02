@@ -1,22 +1,23 @@
+---
 driver:
   name: docker
-  use_sudo: false
-  customize: memory 1048
+
 provisioner:
   name: chef_zero
-# Uncomment the following verifier to leverage Inspec instead of Busser (the
-# default verifier)
-# verifier:
-#   name: inspec
+  product_version: 14.10
+  
 verifier:
   name: inspec
   sudo_command: . /etc/profile;
+
 platforms:
-- name: ubuntu-14.04
-  driver_config:
-    instance_name: kraken-ubuntu1404
+  - name: ubuntu-18.04
+
 suites:
-- name: default
-  run_list:
-  - recipe[kraken::default]
-  attributes:
+  - name: default
+    run_list:
+      - recipe[kraken::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
