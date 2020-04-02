@@ -7,7 +7,10 @@
 
 include_recipe 'apt' if node['platform_family'] == 'debian'
 
-include_recipe 'build-essential'
+build_essential 'install essential' do
+  action :install
+end
+
 # jellyfish is necessary for kraken-build
 include_recipe 'Jellyfish'
 
