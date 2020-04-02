@@ -21,13 +21,11 @@ end
 # Check that kraken works
 describe command('kraken --version') do
   its('exit_status') { should eq 0 }
-  # its('stdout') { should match('0.10.5-beta') }
-  its('stdout') { should match('unreleased') }
+  its('stdout') { should match('v1.1.1') }
 end
 
 # Check that kraken-build works
 describe command('kraken-build --version') do
   its('exit_status') { should eq 0 }
-  # its('stdout') { should match('0.10.5-beta') }
-  its('stdout') { should match('unreleased') }
+  its('stdout') { should match('v1.1.1') }
 end
