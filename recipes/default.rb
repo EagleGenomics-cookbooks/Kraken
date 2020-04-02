@@ -1,10 +1,8 @@
 #
-# Cookbook Name:: kraken
+# Cookbook:: kraken
 # Recipe:: default
 #
-# Copyright (c) 2016 Eagle Genomics Ltd, Apache License, Version 2.0
-######################################
-
+# Copyright:: 2019, Eagle Genomics Ltd, All Rights Reserved.
 apt_update if node['platform_family'] == 'debian'
 
 build_essential 'install essential' do

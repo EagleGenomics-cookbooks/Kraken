@@ -1,14 +1,14 @@
 name 'kraken'
-maintainer 'Eagle genomics'
+maintainer 'Eagle Genomics Ltd'
 maintainer_email 'chef@eaglegenomics.com'
-license 'apache2'
+license 'Apache-2.0'
 description 'Installs/Configures kraken'
-long_description 'Installs/Configures kraken'
-version '0.1.6'
-
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+chef_version '>= 14.10'
+supports 'ubuntu', '= 18.04'
 source_url 'https://github.com/EagleGenomics-cookbooks/kraken'
 issues_url 'https://github.com/EagleGenomics-cookbooks/kraken/issues'
-
+version '0.1.6'
 depends 'magic_shell', '= 1.0.1'
 depends 'git'
 depends 'Jellyfish'
